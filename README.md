@@ -37,14 +37,15 @@ In this project I:
 
 ## Repository contents
 
-​```
+```text
 .
 ├── README.md                   <- this file
 ├── report.pdf                  <- full PDF report (8 sections + executive summary)
 ├── phishing_notebook.ipynb     <- Jupyter notebook: EDA, training, evaluation
 ├── requirements.txt            <- Python dependencies
 └── urldata.csv                 <- the dataset (10,000 URLs, 17 features + label)
-​```
+```
+
 ## Execution instructions
 
 ```bash
