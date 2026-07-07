@@ -1,0 +1,30 @@
+Duplicate analysis
+==================
+Total rows in raw dataset:       10000
+
+Full-row duplicates (identical across ALL columns, including Domain):
+  duplicated rows:      5626
+  unique full rows:     4374
+
+Feature-vector duplicates (identical AFTER dropping Domain column):
+  duplicated rows:      9120
+  unique feature vectors: 880
+
+Interpretation:
+
+The full-row count (5,626 out of 10,000) already shows a serious data
+quality problem: over half the rows in the raw CSV are literal duplicates
+of another row, same Domain, same 17 features, same label. The dataset
+does not even contain 10,000 distinct URLs.
+
+The feature-vector count is even more extreme. Once we strip the Domain
+column and look only at the 17 numerical features (which is all the model
+ever sees), only 880 unique feature vectors remain out of 10,000 rows.
+That means most of the URLs that ARE unique at the string level collapse
+into a much smaller number of feature-vector patterns because the feature
+representation is so coarse.
+
+For cross-validation this matters because the model sees feature vectors,
+not URL strings. Two "different" URLs mapping to the same feature vector
+end up in both train and test folds during CV, which artificially inflates
+every score.

@@ -1,0 +1,6 @@
+Model,Acc (dirty),Acc (clean),F1 (dirty),F1 (clean),MCC (dirty),MCC (clean)
+LogisticRegression,0.802,0.830,0.768,0.900,0.631,0.332
+DecisionTree,0.828,0.770,0.807,0.859,0.674,0.216
+RandomForest,0.857,0.743,0.845,0.845,0.723,0.084
+MLP,0.848,0.824,0.830,0.895,0.713,0.351
+XGBoost,0.854,0.770,0.841,0.862,0.717,0.167
